@@ -14,23 +14,23 @@ logging.basicConfig(
 app = Flask(__name__)
 
 KAFKA_CONFIG = {
-    'bootstrap.servers': 'cvq4abs3mareak309q80.any.us-west-2.mpx.prd.cloud.redpanda.com:9092',
+    'bootstrap.servers': 'd03jborb92dfgde46vd0.any.us-west-2.mpx.prd.cloud.redpanda.com:9092',
     'security.protocol': 'SASL_SSL',
     'sasl.mechanism': 'SCRAM-SHA-256',
-    'sasl.username': 'IngEnigma',
-    'sasl.password': 'BrARBOxX98VI4f2LIuIT1911NYGrXu',
-    'group.id': 'crimes-consumer-group',
+    'sasl.username': 'SoyEtoor',
+    'sasl.password': '040901',
+    'group.id': 'Mongo-consumer-group',
     'auto.offset.reset': 'earliest',
     'enable.auto.commit': 'false'
 }
 
 MONGO_URI = "mongodb+srv://IngEnigma:0ZArHx18XQIFWPHu@bigdata.iwghsuv.mongodb.net/?retryWrites=true&w=majority&appName=BigData"
 
-DB_NAME = "BigData"
+DB_NAME = "people"
 
-COLLECTION_NAME = "BigData"
+COLLECTION_NAME = "people"
 
-TOPIC = "crimes_mongo"
+TOPIC = "Mongo"
 
 DATE_FORMAT = '%Y-%m-%d %H:%M:%S.%f'
 
