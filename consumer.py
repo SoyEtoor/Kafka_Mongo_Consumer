@@ -28,7 +28,7 @@ MONGO_URI = "mongodb+srv://miguelon8203:040901@cluster0.8e0x6ja.mongodb.net/?ret
 
 DB_NAME = "people"
 
-COLLECTION_NAME = "people.people"  # Ajustado a la colección correcta
+COLLECTION_NAME = "people"
 
 TOPIC = "Mongo"
 
@@ -43,27 +43,17 @@ def parse_dates(data: dict):
         if 'crime_details' in data and 'report_date' in data['crime_details']:
             date_str = data['crime_details']['report_date']
             if isinstance(date_str, str):
-                try:
-                    data['crime_details']['report_date'] = datetime.strptime(date_str, DATE_FORMAT)
-                except ValueError as e:
-                    logging.warning(f"Error al convertir report_date: {e}")
+                data['crime_details']['report_date'] = datetime.strptime(date_str, DATE_FORMAT)
         
         if 'metadata' in data and 'imported_at' in data['metadata']:
             date_str = data['metadata']['imported_at']
             if isinstance(date_str, str):
-                try:
-                    data['metadata']['imported_at'] = datetime.strptime(date_str, DATE_FORMAT)
-                except ValueError as e:
-                    logging.warning(f"Error al convertir imported_at: {e}")
+                data['metadata']['imported_at'] = datetime.strptime(date_str, DATE_FORMAT)
     except Exception as e:
         logging.warning(f"Error al parsear fechas: {e}")
 
 def insert_crime(data):
     try:
-        # Asegúrate de que los documentos tengan un '_id' único, si no lo tienen, asigna uno
-        if '_id' not in data:
-            data['_id'] = str(datetime.now())  # Generar un ID único basado en el tiempo (o usa otro método)
-
         collection, client = get_mongo_collection()
         parse_dates(data)
 
