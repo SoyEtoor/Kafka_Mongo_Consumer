@@ -28,7 +28,7 @@ MONGO_URI = "mongodb+srv://miguelon8203:040901@cluster0.8e0x6ja.mongodb.net/?ret
 
 DB_NAME = "people"
 
-COLLECTION_NAME = "people.people"
+COLLECTION_NAME = "people"
 
 TOPIC = "Mongo"
 
