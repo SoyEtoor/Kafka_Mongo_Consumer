@@ -24,7 +24,7 @@ KAFKA_CONFIG = {
     'enable.auto.commit': 'false'
 }
 
-MONGO_URI = "mongodb+srv://torreshectormig:040901@people.dm5as.mongodb.net/?retryWrites=true&w=majority&appName=people"
+MONGO_URI = "mongodb+srv://miguelon8203:040901@cluster0.8e0x6ja.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 DB_NAME = "people"
 
